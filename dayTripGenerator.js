@@ -3,8 +3,14 @@
 
 function runDayGenerator(){
 
-	let destinationFromFunction = whereToGo();
-
+	let destinationFromDestinationsFunction = whereToGo();
+	let destinationFromRestaurantsFunction = whatToEat();
+	let destinationFromTransportationFunction = howToGo();
+	let destinationFromEntertainmentFunction = whatToDo();
+	console.log("I went to " + destinationFromDestinationsFunction + " via " +
+	destinationFromTransportationFunction +
+	 " where I ate at the local " + destinationFromRestaurantsFunction + " . " + "After that I met some friends at the " +
+	destinationFromEntertainmentFunction )
 
 
 
@@ -16,7 +22,7 @@ function whereToGo(){
 	return randomDestination;
 }
 
-function whattoEato(){
+function whatToEat(){
 	let restaurants = ['mcdonalds', 'gastatte', 'pizzaria', 'ginos'];
 	let randomEatery = restaurants[ Math.floor(Math.random() * restaurants.length) ];
 	return randomEatery;
@@ -27,7 +33,7 @@ function howToGo(){
 	return randomModeOfTransport;
 }
 function whatToDo(){
-	let entertainment = ['movie', 'miniGolf', 'bowling', 'bar', 'bocceBall'];
+	let entertainment = ['movie theater', 'miniGolf course', 'bowling alley', 'bar', 'bocceBall tournament'];
 	let randomToDo = entertainment[ Math.floor(Math.random() * entertainment.length) ];
 	return randomToDo;
 }
