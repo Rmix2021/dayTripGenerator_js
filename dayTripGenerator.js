@@ -12,8 +12,8 @@ let userInput = confirmationWindow();
 // functions
 
 function confirmationWindow(){
-	let userInput = confirm("You will go to " + destination + " via " + transportation + " where you will eat at the local " + restaurant + " . " + "After that you can meet some friends at the " + randomToDo);
-	return userInput;
+	let userAnswer = confirm("You will go to " + destination + " via " + transportation + " where you will eat at the local " + restaurant + " . " + "After that you can meet some friends at the " + randomToDo);
+	return userAnswer;
 }
 
 function getRandomDayTrip(){
@@ -21,9 +21,18 @@ function getRandomDayTrip(){
 		console.log("I went to " + destination + " via " + transportation + " where I ate at the local " + restaurant + " . " + "After that I met some friends at the " +	randomToDo);
 	}
 	else{
-		window.location = "file:///D:/Projects/Dev%20Code%20Camp/devcodeclass/dayTripGenerator/dayTripGenerator.html";
+		destination = whereToGo();
+		restaurant = whatToEat();
+		transportation = howToGo();
+		randomToDo = whatToDo();
+		userInput = confirmationWindow();
+		getRandomDayTrip();
+
+
+
 }
 }
+
 
 
 function whereToGo(){
@@ -52,7 +61,7 @@ function whatToDo(){
 
 getRandomDayTrip();
 
-
+// window.location = "file:///D:/Projects/Dev%20Code%20Camp/devcodeclass/dayTripGenerator/dayTripGenerator.html";
 // variables
 // constructors
 // methods/functions
