@@ -10,14 +10,6 @@ let userInput = confirmationWindow();
 
 
 // functions
-function reinitialization(){
-	whereToGo();
-	whatToEat();
-	howToGo();
-	whatToDo();
-	confirmationWindow();
-	getRandomDayTrip();
-}
 
 function confirmationWindow(){
 	let userInput = confirm("You will go to " + destination + " via " + transportation + " where you will eat at the local " + restaurant + " . " + "After that you can meet some friends at the " + randomToDo);
@@ -35,30 +27,32 @@ function getRandomDayTrip(){
 
 
 function whereToGo(){
-	let destinationsArray = ['berlin','frankfurt','nurnburg','munchen'];
+	let destinationsArray = ['Berlin','Frankfurt','Nurnburg','Munchen'];
 	let randomDestination = destinationsArray[ Math.floor(Math.random() * destinationsArray.length) ];
 	return randomDestination;
 }
 
 function whatToEat(){
-	let restaurantsArray = ['mcdonalds', 'gastatte', 'pizzaria', 'ginos'];
+	let restaurantsArray = ['Mcdonalds', 'Gastatte', 'Pizzaria', 'Ginos'];
 	let randomEatery = restaurantsArray[ Math.floor(Math.random() * restaurantsArray.length) ];
 	return randomEatery;
 }
 
 function howToGo(){
-	let transportationsArray = ['car', 'bike','motorcycle','train', 'bus'];
+	let transportationsArray = ['Car', 'Bike','Motorcycle','Train', 'Bus'];
 	let randomModeOfTransport = transportationsArray[ Math.floor(Math.random() *transportationsArray.length) ];
 	return randomModeOfTransport;
 }
 
 function whatToDo(){
-	let entertainmentArray = ['movie theater', 'miniGolf course', 'bowling alley', 'bar', 'bocceBall tournament'];
+	let entertainmentArray = ['Movie Theater', 'MiniGolf Course', 'Bowling Alley', 'Bar', 'BocceBall Tournament'];
 	let randomToDo = entertainmentArray[ Math.floor(Math.random() * entertainmentArray.length) ];
 	return randomToDo;
 }
 
 getRandomDayTrip();
+
+
 // variables
 // constructors
 // methods/functions
