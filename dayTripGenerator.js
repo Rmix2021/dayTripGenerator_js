@@ -1,46 +1,64 @@
+"use strict";
+
+// variables
+
+let destination = whereToGo();
+let restaurant = whatToEat();
+let transportation = howToGo();
+let randomToDo = whatToDo();
+let userInput = confirmationWindow();
 
 
-
-function runDayGenerator(){
-
-	let destinationFromDestinationsFunction = whereToGo();
-	let destinationFromRestaurantsFunction = whatToEat();
-	let destinationFromTransportationFunction = howToGo();
-	let destinationFromEntertainmentFunction = whatToDo();
-	console.log("I went to " + destinationFromDestinationsFunction + " via " +
-	destinationFromTransportationFunction +
-	 " where I ate at the local " + destinationFromRestaurantsFunction + " . " + "After that I met some friends at the " +
-	destinationFromEntertainmentFunction )
-
-
-
+// functions
+function reinitialization(){
+	whereToGo();
+	whatToEat();
+	howToGo();
+	whatToDo();
+	confirmationWindow();
+	getRandomDayTrip();
 }
 
+function confirmationWindow(){
+	let userInput = confirm("You will go to " + destination + " via " + transportation + " where you will eat at the local " + restaurant + " . " + "After that you can meet some friends at the " + randomToDo);
+	return userInput;
+}
+
+function getRandomDayTrip(){
+	if(userInput === true){
+		console.log("I went to " + destination + " via " + transportation + " where I ate at the local " + restaurant + " . " + "After that I met some friends at the " +	randomToDo);
+	}
+	else{
+		window.location = "file:///D:/Projects/Dev%20Code%20Camp/devcodeclass/dayTripGenerator/dayTripGenerator.html";
+}
+}
+
+
 function whereToGo(){
-	let destinations = ['berlin','franfurt','nurnburg','munchen'];
-	let randomDestination = destinations[ Math.floor(Math.random() * destinations.length) ];
+	let destinationsArray = ['berlin','frankfurt','nurnburg','munchen'];
+	let randomDestination = destinationsArray[ Math.floor(Math.random() * destinationsArray.length) ];
 	return randomDestination;
 }
 
 function whatToEat(){
-	let restaurants = ['mcdonalds', 'gastatte', 'pizzaria', 'ginos'];
-	let randomEatery = restaurants[ Math.floor(Math.random() * restaurants.length) ];
+	let restaurantsArray = ['mcdonalds', 'gastatte', 'pizzaria', 'ginos'];
+	let randomEatery = restaurantsArray[ Math.floor(Math.random() * restaurantsArray.length) ];
 	return randomEatery;
 }
+
 function howToGo(){
-	let transportation = ['car', 'bike','motorcycle','train', 'bus'];
-	let randomModeOfTransport = transportation[ Math.floor(Math.random() *transportation.length) ];
+	let transportationsArray = ['car', 'bike','motorcycle','train', 'bus'];
+	let randomModeOfTransport = transportationsArray[ Math.floor(Math.random() *transportationsArray.length) ];
 	return randomModeOfTransport;
 }
+
 function whatToDo(){
-	let entertainment = ['movie theater', 'miniGolf course', 'bowling alley', 'bar', 'bocceBall tournament'];
-	let randomToDo = entertainment[ Math.floor(Math.random() * entertainment.length) ];
+	let entertainmentArray = ['movie theater', 'miniGolf course', 'bowling alley', 'bar', 'bocceBall tournament'];
+	let randomToDo = entertainmentArray[ Math.floor(Math.random() * entertainmentArray.length) ];
 	return randomToDo;
 }
 
-
-
-
-
-
-runDayGenerator();
+getRandomDayTrip();
+// variables
+// constructors
+// methods/functions
